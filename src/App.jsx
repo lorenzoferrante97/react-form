@@ -27,7 +27,7 @@ function App() {
   return (
 
     <>
-      <div className="min-h-screen w-full flex flex-col gap-4u justify-center items-center font-custom">
+      <div className="min-h-screen w-[80%] mx-auto flex flex-col gap-4u justify-center items-center font-custom">
         <h1 className="font-h1">Lista di articoli</h1>
         {/* form */}
         <form onSubmit={ addNewArticle } className="w-[92%] max-w-[480px] flex flex-col justify-center items-center my-10u gap-2u">
