@@ -1,15 +1,19 @@
 
 
 
-export default function List () {
+export default function List ({ articles }) {
 
     return (
 
         <>
         <ul className="flex flex-col gap-3u">
-            <li>Ciao</li>
-            <li>Ciao</li>
-            <li>Ciao</li>
+            {
+                articles.map( (article, index) => {
+                    return (
+                        <li key={index}>{article}</li>
+                    )
+                } )
+            }
         </ul>
         </>
 
