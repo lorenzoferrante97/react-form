@@ -10,7 +10,7 @@ export default function List ({ articles }) {
             {
                 articles.map( (article, index) => {
                     return (
-                        <li key={index}>{article}</li>
+                        <li className="font-body-base-regular" key={index}>{article}</li>
                     )
                 } )
             }
