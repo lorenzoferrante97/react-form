@@ -11,13 +11,16 @@ const addNewArticle = () => {
   return 1;
 }
 
+// set new article to value
+const setArticleToValue = (e) => setNewArticle(e.target.value);
+
 
 function App() {
 
   // dynamic articles list var
-  // const [ articlesList, setarticlesList ] = useState(articles);
+  const [ articlesList, setarticlesList ] = useState(articles);
   // dynamic new article var
-  // const [ newArticle, setNewArticle ] = useState("");
+  const [ newArticle, setNewArticle ] = useState("");
 
   return (
 
@@ -27,7 +30,8 @@ function App() {
         {/* form */}
         <form onSubmit={addNewArticle} className="w-[92%] max-w-[480px] flex flex-col justify-center items-center my-10u gap-2u">
           <label>Inserisci un nuovo articolo</label>
-          <input className="border-2 border-smoke-200 rounded-full px-4u py-2u" type="text" placeholder="Tit nuovo articolo" />
+          <input className="border-2 border-smoke-200 rounded-full px-4u py-2u" type="text" placeholder="Tit nuovo articolo" onChange={ setArticleToValue } />
+          <button type="submit">Inserisci</button>
         </form>
         {/* list */}
         <List articles={articles} />
