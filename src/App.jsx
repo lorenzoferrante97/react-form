@@ -6,23 +6,23 @@ import List from "./components/List";
 
 const articles = ["Titolo Art 1", "Titolo Art 2", "Titolo Art 3"];
 
-// function addNewArticle
-const addNewArticle = (e) => {
-  e.preventDefault();
-
-  return 1;
-}
-
-// set new article to value
-const setArticleToValue = (e) => setNewArticle(e.target.value);
-
 
 function App() {
 
   // dynamic articles list var
-  const [ articlesList, setarticlesList ] = useState(articles);
+  const [ articlesList, setArticlesList ] = useState(articles);
   // dynamic new article var
   const [ newArticle, setNewArticle ] = useState("");
+
+  // function addNewArticle
+  const addNewArticle = (e) => {
+    e.preventDefault();
+
+    return setArticlesList([...articlesList, newArticle]);
+  }
+
+  // set new article to value
+  const setArticleToValue = (e) => setNewArticle(e.target.value);
 
   return (
 
