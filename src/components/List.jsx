@@ -5,15 +5,18 @@ import { useState } from "react"
 export default function List ({ articles }) {
 
     // console.log("articles: ", articles)
-    
-    // const newArticles = articles;
 
-    // const [ updatedArticles, setUpdatedArticles ] = useState([]);
+    const [ updatedArticles, setUpdatedArticles ] = useState(articles);
+
+    // è articles lo stesso di updatearticles o è stato aggiunto un art?
+    articles.length === updatedArticles.length ? null : setUpdatedArticles(articles);
 
     // console.log("updatedArticles: ", updatedArticles)
 
+    // let finalArticles = [];
+
     // const deleteFromList = (i) => {
-    //     setUpdatedArticles( articles.filter( (article, index) => index !== i ) );
+    //     setUpdatedArticles( updatedArticles.filter( (article, index) => index !== i ) );
     // }
 
     return (
@@ -22,7 +25,7 @@ export default function List ({ articles }) {
         <ul className="flex flex-col gap-3u w-full">
             {
 
-                articles.map( (article, index) => {
+                updatedArticles.map( (article, index) => {
                     return (
                         <li className="font-body-base-regular flex justify-between items-center border-b-2 border-smoke-50 py-3u" key={index}>
                             <p>{article}</p>
